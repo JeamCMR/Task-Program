@@ -44,13 +44,12 @@ const addOrUpdateTask  = () =>{
       //si no  agrega el objeto al comienzo del array
       taskData.unshift(taskObj); //unshift() es un método de matriz que se utiliza para agregar uno o más elementos al comienzo de una matriz.
     }
-
     updateTaskContainer();
     reset();
 }
 
 
-
+//Recore el array con forEach
 const updateTaskContainer = () =>{
     tasksContainer.innerHTML="";  //Limpia el html antes de recorer el array
     taskData.forEach(({ id, title, date, description }) => {
@@ -73,7 +72,6 @@ const reset = () => {
     titleInput.value="";
     dateInput.value="";
     descriptionInput.value="";
-
     taskForm.classList.toggle("hidden");
     currentTask = {};  
 }
